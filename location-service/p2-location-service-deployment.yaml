@@ -30,7 +30,7 @@ spec:
         - name: P2_User
           value: "FellowshipMembers"
         - name: P2_Password
-          value: "YouCanPass"
+          value: 
         ports:
         - containerPort: 2006
         livenessProbe:
