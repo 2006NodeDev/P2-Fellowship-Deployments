@@ -2,12 +2,15 @@ apiVersion: networking.k8s.io/v1beta1 # for versions before 1.14 use extensions/
 kind: Ingress
 metadata:
   name: p2-ingress
-  namespace: p2-namespace
 spec:
   rules:
   - http:
       paths:
-      - path: /user-service/*
+      - path: /P2-Fellowship-User-Service/*
         backend:
           serviceName: p2-user-service-service
           servicePort: 2007
+      - path: /P2-Fellowship-Location-Service/*
+        backend:
+          serviceName: p2-location-service-service
+          servicePort: 2006
