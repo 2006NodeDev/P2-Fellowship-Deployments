@@ -23,19 +23,32 @@ spec:
         image: gcr.io/gifted-pulsar-279818/p2-location-service 
         imagePullPolicy: Always
         env:
-        - name: P2_Host
+        - name: LB_Host
           value: "10.42.224.3"
         - name: P2_Database
           value: "LOTR-mirco"
         - name: P2_User
           value: "FellowshipMembers"
+        - name: LB_BASE_PATH
+          value: "/location-service"
+        - name: P2_USER_SERVICE_HOST
+          value: "http://p2-user-service-service:2007/P2-Fellowship-User-Service"  
         - name: P2_Password
-          value: 
+          valueFrom:
+            secretKeyRef:
+              name: p2-user-service-secrets
+              key: password 
         ports:
         - containerPort: 2006
         livenessProbe:
           httpGet:
             path: /health
-            port: 2007
+            port: 2006
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 2006
           initialDelaySeconds: 3
           periodSeconds: 3
