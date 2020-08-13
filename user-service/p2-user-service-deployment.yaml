@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: p2-user-service-deployment
-  namespace: p2-project
+  namespace: p2-namespace
   labels:
     app: p2
     service: user-service

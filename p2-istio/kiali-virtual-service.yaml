@@ -11,7 +11,7 @@ spec:
   http:
   - match:
     - uri:
-        prefix: /kiali
+        prefix: '/kiali'
     route:
     - destination:
         host: kiali # interpreted as reviews.foo.svc.cluster.local

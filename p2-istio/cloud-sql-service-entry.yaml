@@ -3,7 +3,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: ServiceEntry
 metadata:
   name: cloud-sql
-  namespace: p2-project
+  namespace: p2-namespace
 spec:
   hosts:
   - cloud-sql.com

@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: p2-gateway
-  namespace: p2-project
+  namespace: p2-namespace
 spec:
   selector:
     istio: ingressgateway
