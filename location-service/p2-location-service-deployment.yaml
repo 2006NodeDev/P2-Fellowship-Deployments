@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: p2-location-service-deployment
+  namespace: p2-project
   labels:
     app: p2
     service: location-service
